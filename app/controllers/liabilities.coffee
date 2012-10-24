@@ -34,10 +34,10 @@ class Liabilities extends Spine.Controller
 
     constructor: ->
         super
+        @html(require('views/liabilities'))
         Liability.bind("create",  @addOne)
         Liability.bind("refresh", @addAll)
         Liability.fetch()
-        @html(require('views/liabilities'))
 
     addLiability: =>
         liability = new Liability

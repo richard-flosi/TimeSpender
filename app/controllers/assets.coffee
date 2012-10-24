@@ -34,10 +34,10 @@ class Assets extends Spine.Controller
 
     constructor: ->
         super
+        @html(require('views/assets'))
         Asset.bind("create",  @addOne)
         Asset.bind("refresh", @addAll)
         Asset.fetch()
-        @html(require('views/assets'))
 
     addAsset: =>
         asset = new Asset
