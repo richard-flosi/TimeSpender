@@ -3,7 +3,7 @@ TimeSpender
 
 How do you spend your time?
 
-TimeSpender helps you define your income producing assets and expense spending liabilities.
+TimeSpender helps you define your assets and liabilities.
 
 
 Assets
@@ -21,7 +21,7 @@ Liabilities take money out of your pocket.
 Savings
 =======
 
-How much save regularly?
+How much do you save regularly?
 
 
 Balance
