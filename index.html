@@ -18,7 +18,7 @@
             var exports = this;
             jQuery(function(){
                 var App = require("index");
-                exports.app = new App({el: $("#app")});
+                exports.app = new App({el: $("body")});
             });
         </script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
@@ -27,189 +27,19 @@
         <div class="navbar navbar-fixed-top navbar-inverse">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="brand" href="#">TimeSpender</a>
+                    <a class="brand" href="#/home">TimeSpender</a>
                     <ul class="nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Assets</a></li>
-                        <li><a href="#">Liabilities</a></li>
-                        <li><a href="#">Savings</a></li>
-                        <li><a href="#">Balance</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#/assets">Assets</a></li>
+                        <li><a href="#/liabilities">Liabilities</a></li>
+                        <li><a href="#/savings">Savings</a></li>
+                        <li><a href="#/balance">Balance</a></li>
+                        <li><a href="#/contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-
         <div class="container">
-            <div id="app">
-
-                <div id="timespender">
-                    <h1>How do you spend your time?</h1>
-                    <p>
-                        TimeSpender helps you define your income producing assets and expense spending liabilities.
-                    </p>
-                </div>
-
-                <div id="assets">
-                    <h2>Assets</h2>
-                    <p>
-                        Assets put money in your pocket. Add all your sources of income below.
-                    </p>
-                    <table class="list table table-striped">
-                        <tr>
-                            <th>Person</th>
-                            <th>Income</th>
-                            <th>Frequency</th>
-                            <th>Source</th>
-                            <th>Hours</th>
-                            <th style="text-align:center;">Disable</th>
-                            <th style="text-align:center;">Remove</th>
-                        </tr>
-                    </table>
-                    <div>
-                        <input type="text" class="person input-medium" placeholder="Person">
-                        makes
-                        $<input type="text" class="income input-medium" placeholder="Income">
-                        per
-                        <select class="frequency input-medium" placeholder="Frequency">
-                            <option>Day</option>
-                            <option>Week</option>
-                            <option>Month</option>
-                            <option>Year</option>
-                        </select>
-                        from
-                        <input type="text" class="source input-medium" placeholder="Source">
-                        for
-                        <input type="text" class="hours input-medium" placeholder="Hours">
-                        hours.
-                    </div>
-                    <div>
-                        <button type="button" class="add btn btn-primary">Add Asset</button>
-                    </div>
-
-                    <h3>Summary</h3>
-                    <table class="summary table table-striped">
-                        <tr>
-                            <th>Hour</th>
-                            <th>Day</th>
-                            <th>Week</th>
-                            <th>Month</th>
-                            <th>Year</th>
-                        </tr>
-                    </table>
-                </div>
-
-                <div id="liabilities">
-                    <h2>Liabilities</h2>
-                    <p>
-                        Liabilities take money out of your pocket. Add all your expenses below.
-                    </p>
-                    <table class="list table table-striped">
-                        <tr>
-                            <th>Person</th>
-                            <th>Expense</th>
-                            <th>Frequency</th>
-                            <th>Outlet</th>
-                            <th>Hours</th>
-                            <th style="text-align:center;">Disable</th>
-                            <th style="text-align:center;">Remove</th>
-                        </tr>
-                    </table>
-                    <div>
-                        <input type="text" class="person input-medium" placeholder="Person">
-                        spends
-                        $<input type="text" class="expense input-medium" placeholder="Expense">
-                        per
-                        <select class="frequency input-medium" placeholder="Frequency">
-                            <option>Day</option>
-                            <option>Week</option>
-                            <option>Month</option>
-                            <option>Year</option>
-                        </select>
-                        on
-                        <input type="text" class="outlet input-medium" placeholder="Outlet">
-                        for
-                        <input type="text" class="hours input-medium" placeholder="Hours">
-                        hours.
-                    </div>
-                    <div>
-                        <button type="button" class="add btn btn-danger">Add Liability</button>
-                    </div>
-
-                    <h3>Summary</h3>
-                    <table class="summary table table-striped">
-                        <tr>
-                            <th>Hour</th>
-                            <th>Day</th>
-                            <th>Week</th>
-                            <th>Month</th>
-                            <th>Year</th>
-                        </tr>
-                    </table>
-                </div>
-
-                <div id="savings">
-                    <h2>Savings</h2>
-                    <p>
-                        How much do you put away into savings regularly?
-                    </p>
-                    <table class="list table table-striped">
-                        <tr>
-                            <th>Person</th>
-                            <th>Savings</th>
-                            <th>Frequency</th>
-                            <th style="text-align:center;">Disable</th>
-                            <th style="text-align:center;">Remove</th>
-                        </tr>
-                    </table>
-                    <div>
-                        <input type="text" class="person input-medium" placeholder="Person">
-                        saves
-                        $<input type="text" class="savings input-medium" placeholder="Savings">
-                        per
-                        <select class="frequency input-medium" placeholder="Frequency">
-                            <option>Day</option>
-                            <option>Week</option>
-                            <option>Month</option>
-                            <option>Year</option>
-                        </select>
-                        .
-                    </div>
-                    <div>
-                        <button type="button" class="add btn btn-success">Add Savings</button>
-                    </div>
-
-                    <h3>Summary</h3>
-                    <table class="summary table table-striped">
-                        <tr>
-                            <th>Hour</th>
-                            <th>Day</th>
-                            <th>Week</th>
-                            <th>Month</th>
-                            <th>Year</th>
-                        </tr>
-                    </table>
-                </div>
-
-                <div id="balance">
-                    <h2>Balance</h2>
-                    <p>
-                        Your balance is the difference between your Assets and your Liabilities.
-                    </p>
-
-                    <h3>Summary</h3>
-                    <table class="summary table table-striped">
-                        <tr>
-                            <th>Hour</th>
-                            <th>Day</th>
-                            <th>Week</th>
-                            <th>Month</th>
-                            <th>Year</th>
-                        </tr>
-                    </table>
-                </div>
-
-            </div>
+            <div id="app"></div>
         </div>
     </body>
 </html>
