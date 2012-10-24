@@ -1,0 +1,17 @@
+<div id="balance">
+    <h2>Balance</h2>
+    <p>
+        Your balance is the difference between your Assets and your Liabilities.
+    </p>
+
+    <h3>Summary</h3>
+    <table class="summary table table-striped">
+        <tr>
+            <th>Hour</th>
+            <th>Day</th>
+            <th>Week</th>
+            <th>Month</th>
+            <th>Year</th>
+        </tr>
+    </table>
+</div>

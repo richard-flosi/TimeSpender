@@ -1,23 +1,21 @@
-<div id="assets">
-    <h2>Assets</h2>
+<div id="savings">
+    <h2>Savings</h2>
     <p>
-        Assets put money in your pocket. Add all your sources of income below.
+        How much do you put away into savings regularly?
     </p>
     <table class="list table table-striped">
         <tr>
             <th>Person</th>
-            <th>Income</th>
+            <th>Savings</th>
             <th>Frequency</th>
-            <th>Source</th>
-            <th>Hours</th>
             <th style="text-align:center;">Disable</th>
             <th style="text-align:center;">Remove</th>
         </tr>
     </table>
     <div>
         <input type="text" class="person input-medium" placeholder="Person">
-        makes
-        $<input type="text" class="income input-medium" placeholder="Income">
+        saves
+        $<input type="text" class="savings input-medium" placeholder="Savings">
         per
         <select class="frequency input-medium" placeholder="Frequency">
             <option>Day</option>
@@ -25,14 +23,10 @@
             <option>Month</option>
             <option>Year</option>
         </select>
-        from
-        <input type="text" class="source input-medium" placeholder="Source">
-        for
-        <input type="text" class="hours input-medium" placeholder="Hours">
-        hours.
+        .
     </div>
     <div>
-        <button type="button" class="add btn btn-primary">Add Asset</button>
+        <button type="button" class="add btn btn-success">Add Savings</button>
     </div>
 
     <h3>Summary</h3>

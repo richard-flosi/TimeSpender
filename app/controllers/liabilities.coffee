@@ -13,7 +13,7 @@ class LiabilityItem extends Spine.Controller
         @item.bind("update", @render)
 
     render: =>
-        @html(require('views/liabilities')(@item))
+        @html(require('views/liability')(@item))
         @
 
     remove: ->
@@ -37,6 +37,7 @@ class Liabilities extends Spine.Controller
         Liability.bind("create",  @addOne)
         Liability.bind("refresh", @addAll)
         Liability.fetch()
+        @html(require('views/liabilities'))
 
     addLiability: =>
         liability = new Liability

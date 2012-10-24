@@ -2,13 +2,14 @@ require('lib/setup')
 
 Spine = require('spine')
 $ = Spine.$
-Assets = require('controllers/assets')
-Liabilities = require('controllers/liabilities')
+Spine.Route = require('spine/lib/route')
+
+Pages = require('controllers/pages')
 
 class App extends Spine.Controller
     constructor: ->
         super
-        @assets = new Assets(el: $("#assets"))
-        @liabilities = new Liabilities(el: $("#liabilities"))
+        pages = new Pages(el: $('#app'))
+        Spine.Route.setup()
 
 module.exports = App

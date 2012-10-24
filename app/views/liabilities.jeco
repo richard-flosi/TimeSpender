@@ -1,7 +1,48 @@
-<td><%= @person %></td>
-<td>makes $<%= @expense %></td>
-<td>per <%= @frequency %></td>
-<td>from <%= @outlet %></td>
-<td>for <%= @hours %> hours.</td>
-<td style="text-align:center;"><input type="checkbox"></td>
-<td style="text-align:center;"><i class="remove icon-trash"></i></td>
+<div id="liabilities">
+    <h2>Liabilities</h2>
+    <p>
+        Liabilities take money out of your pocket. Add all your expenses below.
+    </p>
+    <table class="list table table-striped">
+        <tr>
+            <th>Person</th>
+            <th>Expense</th>
+            <th>Frequency</th>
+            <th>Outlet</th>
+            <th>Hours</th>
+            <th style="text-align:center;">Disable</th>
+            <th style="text-align:center;">Remove</th>
+        </tr>
+    </table>
+    <div>
+        <input type="text" class="person input-medium" placeholder="Person">
+        spends
+        $<input type="text" class="expense input-medium" placeholder="Expense">
+        per
+        <select class="frequency input-medium" placeholder="Frequency">
+            <option>Day</option>
+            <option>Week</option>
+            <option>Month</option>
+            <option>Year</option>
+        </select>
+        on
+        <input type="text" class="outlet input-medium" placeholder="Outlet">
+        for
+        <input type="text" class="hours input-medium" placeholder="Hours">
+        hours.
+    </div>
+    <div>
+        <button type="button" class="add btn btn-danger">Add Liability</button>
+    </div>
+
+    <h3>Summary</h3>
+    <table class="summary table table-striped">
+        <tr>
+            <th>Hour</th>
+            <th>Day</th>
+            <th>Week</th>
+            <th>Month</th>
+            <th>Year</th>
+        </tr>
+    </table>
+</div>

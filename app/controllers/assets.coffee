@@ -13,7 +13,7 @@ class AssetItem extends Spine.Controller
         @item.bind("update", @render)
 
     render: =>
-        @html(require('views/assets')(@item))
+        @html(require('views/asset')(@item))
         @
 
     remove: ->
@@ -37,6 +37,7 @@ class Assets extends Spine.Controller
         Asset.bind("create",  @addOne)
         Asset.bind("refresh", @addAll)
         Asset.fetch()
+        @html(require('views/assets'))
 
     addAsset: =>
         asset = new Asset
