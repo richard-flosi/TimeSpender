@@ -1,7 +1,6 @@
 <td><%= @person %></td>
 <td>spends $<%= @expense %></td>
 <td>per <%= @frequency %></td>
-<td>on <%= @outlet %></td>
-<td>for <%= @hours %> hours.</td>
+<td>on <%= @activity %></td>
 <td style="text-align:center;"><input type="checkbox"></td>
 <td style="text-align:center;"><i class="remove icon-trash"></i></td>

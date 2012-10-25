@@ -20,6 +20,7 @@
         $<input type="text" class="income input-medium" placeholder="Income">
         per
         <select class="frequency input-medium" placeholder="Frequency">
+            <option>Hour</option>
             <option>Day</option>
             <option>Week</option>
             <option>Month</option>
@@ -38,11 +39,34 @@
     <h3>Summary</h3>
     <table class="summary table table-striped">
         <tr>
+            <th>Income</th>
+            <th>per</th>
+            <th>Hours of Work</th>
+        </tr>
+        <tr>
+            <td class="income hour"></td>
             <th>Hour</th>
+            <td class="hours hour"></td>
+        </tr>
+        <tr>
+            <td class="income day"></td>
             <th>Day</th>
+            <td class="hours day"></td>
+        </tr>
+        <tr>
+            <td class="income week"></td>
             <th>Week</th>
+            <td class="hours week"></td>
+        </tr>
+        <tr>
+            <td class="income month"></td>
             <th>Month</th>
+            <td class="hours month"></td>
+        </tr>
+        <tr>
+            <td class="income year"></td>
             <th>Year</th>
+            <td class="hours year"></td>
         </tr>
     </table>
 </div>
