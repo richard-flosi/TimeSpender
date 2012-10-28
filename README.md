@@ -12,16 +12,16 @@ Assets
 Assets put money in your pocket.
 
 
+Investments
+===========
+
+How much do you invest regularly?
+
+
 Liabilities
 ===========
 
 Liabilities take money out of your pocket.
-
-
-Savings
-=======
-
-How much do you save regularly?
 
 
 Balance

@@ -2,6 +2,8 @@ Spine = require('spine')
 Asset = require('models/asset')
 Liability = require('models/liability')
 Converters = require('lib/converters')
+toCurrency = Converters.toCurrency
+toTime = Converters.toTime
 
 class LiabilityItem extends Spine.Controller
     tag: "tr"
@@ -21,6 +23,7 @@ class LiabilityItem extends Spine.Controller
     remove: ->
         @el.remove()
         @item.destroy()
+        Liability.trigger("change")
 
 class Liabilities extends Spine.Controller
     events:
@@ -30,7 +33,7 @@ class Liabilities extends Spine.Controller
         "input.person": "person"
         "input.expense": "expense"
         "select.frequency": "frequency"
-        "input.outlet": "outlet"
+        "input.activity": "activity"
         "input.hours": "hours"
         "table.list": "list"
         "table.summary td.expense.hour": "expensePerHour"
@@ -57,9 +60,15 @@ class Liabilities extends Spine.Controller
             person: @person.val()
             expense: @expense.val()
             frequency: @frequency.val()
-            outlet: @outlet.val()
+            activity: @activity.val()
             hours: @hours.val()
         liability.save()
+
+        @person.val('')
+        @expense.val('')
+        @frequency.val('')
+        @activity.val('')
+        @hours.val('')
 
     addOne: (item) =>
         liability = new LiabilityItem(item: item)
@@ -69,51 +78,18 @@ class Liabilities extends Spine.Controller
         Liability.each(@addOne)
 
     updateSummary: =>
-        expensePer =
-            hour:  0
-            day: 0
-            week: 0
-            month: 0
-            year: 0
+        Liability.summarize()
 
-        hoursPer =
-            hour: 0
-            day: 0
-            week: 0
-            month: 0
-            year: 0
+        @expensePerHour.html('$' + toCurrency(Liability.expensePer.hour))
+        @expensePerDay.html('$' + toCurrency(Liability.expensePer.day))
+        @expensePerWeek.html('$' + toCurrency(Liability.expensePer.week))
+        @expensePerMonth.html('$' + toCurrency(Liability.expensePer.month))
+        @expensePerYear.html('$' + toCurrency(Liability.expensePer.year))
 
-        rate =
-            hourly: 0
-
-        for asset in Asset.all()
-            rate.hourly += asset.income / asset.hours
-        rate.hourly = rate.hourly / Asset.count()
-
-        for liability in Liability.all()
-            expensePer.hour += liability.expense / Converters.hoursIn(liability.frequency)
-
-        expensePer.day = Converters.fromHours('Day', expensePer.hour)
-        expensePer.week = Converters.fromHours('Week', expensePer.hour)
-        expensePer.month = Converters.fromHours('Month', expensePer.hour)
-        expensePer.year = Converters.fromHours('Year', expensePer.hour)
-
-        hoursPer.hour = expensePer.hour / rate.hourly
-        hoursPer.day = expensePer.day / rate.hourly
-        hoursPer.week = expensePer.week / rate.hourly
-        hoursPer.month = expensePer.month / rate.hourly
-        hoursPer.year = expensePer.year / rate.hourly
-
-        @expensePerHour.html('$' + Converters.toCurrency(expensePer.hour))
-        @expensePerDay.html('$' + Converters.toCurrency(expensePer.day))
-        @expensePerWeek.html('$' + Converters.toCurrency(expensePer.week))
-        @expensePerMonth.html('$' + Converters.toCurrency(expensePer.month))
-        @expensePerYear.html('$' + Converters.toCurrency(expensePer.year))
-
-        @hoursPerHour.html(Converters.toTime(hoursPer.hour))
-        @hoursPerDay.html(Converters.toTime(hoursPer.day))
-        @hoursPerWeek.html(Converters.toTime(hoursPer.week))
-        @hoursPerMonth.html(Converters.toTime(hoursPer.month))
-        @hoursPerYear.html(Converters.toTime(hoursPer.year))
+        @hoursPerHour.html(toTime(Liability.hoursPer.hour))
+        @hoursPerDay.html(toTime(Liability.hoursPer.day))
+        @hoursPerWeek.html(toTime(Liability.hoursPer.week))
+        @hoursPerMonth.html(toTime(Liability.hoursPer.month))
+        @hoursPerYear.html(toTime(Liability.hoursPer.year))
 
 module.exports = Liabilities

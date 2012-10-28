@@ -1,6 +1,8 @@
 Spine = require('spine')
 Asset = require('models/asset')
 Converters = require('lib/converters')
+toCurrency = Converters.toCurrency
+toTime = Converters.toTime
 
 class AssetItem extends Spine.Controller
     tag: "tr"
@@ -20,6 +22,7 @@ class AssetItem extends Spine.Controller
     remove: ->
         @el.remove()
         @item.destroy()
+        Asset.trigger("change")
 
 class Assets extends Spine.Controller
     events:
@@ -60,6 +63,12 @@ class Assets extends Spine.Controller
             hours: @hours.val()
         asset.save()
 
+        @person.val('')
+        @income.val('')
+        @frequency.val('')
+        @source.val('')
+        @hours.val('')
+
     addOne: (item) =>
         asset = new AssetItem(item: item)
         @list.append(asset.render().el)
@@ -68,44 +77,18 @@ class Assets extends Spine.Controller
         Asset.each(@addOne)
 
     updateSummary: =>
-        incomePer =
-            hour:  0
-            day: 0
-            week: 0
-            month: 0
-            year: 0
+        Asset.summarize()
 
-        hoursPer =
-            hour: 0
-            day: 0
-            week: 0
-            month: 0
-            year: 0
+        @incomePerHour.html('$' + toCurrency(Asset.incomePer.hour))
+        @incomePerDay.html('$' + toCurrency(Asset.incomePer.day))
+        @incomePerWeek.html('$' + toCurrency(Asset.incomePer.week))
+        @incomePerMonth.html('$' + toCurrency(Asset.incomePer.month))
+        @incomePerYear.html('$' + toCurrency(Asset.incomePer.year))
 
-        for asset in Asset.all()
-            incomePer.hour += asset.income / asset.hours
-            hoursPer.hour += asset.hours / Converters.hoursIn(asset.frequency)
-            hoursPer.day += Converters.hoursIn('Day') / Converters.hoursIn(asset.frequency) * asset.hours
-            hoursPer.week += Converters.hoursIn('Week') / Converters.hoursIn(asset.frequency) * asset.hours
-            hoursPer.month += Converters.hoursIn('Month') / Converters.hoursIn(asset.frequency) * asset.hours
-            hoursPer.year += Converters.hoursIn('Year') / Converters.hoursIn(asset.frequency) * asset.hours
-
-        incomePer.hour = incomePer.hour / Asset.count()
-        incomePer.day = incomePer.hour * hoursPer.day
-        incomePer.week = incomePer.hour * hoursPer.week
-        incomePer.month = incomePer.hour * hoursPer.month
-        incomePer.year = incomePer.hour * hoursPer.year
-
-        @incomePerHour.html('$' + Converters.toCurrency(incomePer.hour))
-        @incomePerDay.html('$' + Converters.toCurrency(incomePer.day))
-        @incomePerWeek.html('$' + Converters.toCurrency(incomePer.week))
-        @incomePerMonth.html('$' + Converters.toCurrency(incomePer.month))
-        @incomePerYear.html('$' + Converters.toCurrency(incomePer.year))
-
-        @hoursPerHour.html(Converters.toTime(hoursPer.hour))
-        @hoursPerDay.html(Converters.toTime(hoursPer.day))
-        @hoursPerWeek.html(Converters.toTime(hoursPer.week))
-        @hoursPerMonth.html(Converters.toTime(hoursPer.month))
-        @hoursPerYear.html(Converters.toTime(hoursPer.year))
+        @hoursPerHour.html(toTime(Asset.hoursPer.hour))
+        @hoursPerDay.html(toTime(Asset.hoursPer.day))
+        @hoursPerWeek.html(toTime(Asset.hoursPer.week))
+        @hoursPerMonth.html(toTime(Asset.hoursPer.month))
+        @hoursPerYear.html(toTime(Asset.hoursPer.year))
 
 module.exports = Assets

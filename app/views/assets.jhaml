@@ -4,6 +4,27 @@
     %p
         Assets put money in your pocket. Add all your sources of income below.
 
+    %div.form-inline
+        %input.person.input-medium{:placeholder => "Person", :type => "text"}
+        makes
+        $
+        %input.income.input-medium{:placeholder => "Income", :type => "text"}
+        per
+        %select.frequency.input-medium{:placeholder => "Frequency"}
+            %option Hour
+            %option Day
+            %option Week
+            %option Month
+            %option Year
+        from
+        %input.source.input-medium{:placeholder => "Source", :type => "text"}
+        for
+        %input.hours.input-medium{:placeholder => "Hours", :type => "text"}
+        hours
+        %button.add.btn.btn-primary{:type => "button"} Add Asset
+
+    %br
+
     %ul.nav.nav-tabs
         %li.list.active
             %a{data-toggle: 'tab', data-target: '#assets div.tab-pane.list'} List
@@ -21,27 +42,6 @@
                     %th Hours
                     %th{:style => "text-align:center;"} Disable
                     %th{:style => "text-align:center;"} Remove
-
-            %div
-                %input.person.input-medium{:placeholder => "Person", :type => "text"}
-                makes
-                $
-                %input.income.input-medium{:placeholder => "Income", :type => "text"}
-                per
-                %select.frequency.input-medium{:placeholder => "Frequency"}
-                    %option Hour
-                    %option Day
-                    %option Week
-                    %option Month
-                    %option Year
-                from
-                %input.source.input-medium{:placeholder => "Source", :type => "text"}
-                for
-                %input.hours.input-medium{:placeholder => "Hours", :type => "text"}
-                hours.
-
-            %div
-                %button.add.btn.btn-primary{:type => "button"} Add Asset
 
         %div.tab-pane.summary
             %table.summary.table.table-striped

@@ -4,6 +4,23 @@
     %p
         Liabilities take money out of your pocket. Add all your expenses below.
 
+    %div.form-inline
+        %input.person.input-medium{:placeholder => "Person", :type => "text"}
+        spends
+        $
+        %input.expense.input-medium{:placeholder => "Expense", :type => "text"}
+        per
+        %select.frequency.input-medium{:placeholder => "Frequency"}
+            %option Hour
+            %option Day
+            %option Week
+            %option Month
+            %option Year
+        on
+        %input.activity.input-medium{:placeholder => "Activity", :type => "text"}
+        %button.add.btn.btn-danger{:type => "button"} Add Liability
+
+    %br
 
     %ul.nav.nav-tabs
         %li.list.active
@@ -21,25 +38,6 @@
                     %th Activity
                     %th{:style => "text-align:center;"} Disable
                     %th{:style => "text-align:center;"} Remove
-
-            %div
-                %input.person.input-medium{:placeholder => "Person", :type => "text"}
-                spends
-                $
-                %input.expense.input-medium{:placeholder => "Expense", :type => "text"}
-                per
-                %select.frequency.input-medium{:placeholder => "Frequency"}
-                    %option Hour
-                    %option Day
-                    %option Week
-                    %option Month
-                    %option Year
-                on
-                %input.outlet.input-medium{:placeholder => "Activity", :type => "text"}
-                .
-
-            %div
-                %button.add.btn.btn-danger{:type => "button"} Add Liability
 
         %div.tab-pane.summary
             %table.summary.table.table-striped

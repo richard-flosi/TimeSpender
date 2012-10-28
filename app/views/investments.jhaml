@@ -1,0 +1,45 @@
+#investments
+    %h2 Investments
+
+    %p
+        How much do you invest regularly?
+
+    %div.form-inline
+        %input.person.input-medium{:placeholder => "Person", :type => "text"}
+        invests
+        $
+        %input.investment.input-medium{:placeholder => "Investment", :type => "text"}
+        per
+        %select.frequency.input-medium{:placeholder => "Frequency"}
+            %option Day
+            %option Week
+            %option Month
+            %option Year
+        %button.add.btn.btn-success{:type => "button"} Add Investment
+
+    %br
+
+    %ul.nav.nav-tabs
+        %li.list.active
+            %a{data-toggle: 'tab', data-target: '#investments div.tab-pane.list'} List
+        %li.summary
+            %a{data-toggle: 'tab', data-target: '#investments div.tab-pane.summary'} Summary
+
+    %div.tab-content
+        %div.tab-pane.list.active
+            %table.list.table.table-striped
+                %tr
+                    %th Person
+                    %th Investment
+                    %th Frequency
+                    %th{:style => "text-align:center;"} Disable
+                    %th{:style => "text-align:center;"} Remove
+
+        %div.tab-pane.summary
+            %table.summary.table.table-striped
+                %tr
+                    %th Hour
+                    %th Day
+                    %th Week
+                    %th Month
+                    %th Year
