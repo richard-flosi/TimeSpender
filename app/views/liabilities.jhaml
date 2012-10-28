@@ -4,58 +4,66 @@
     %p
         Liabilities take money out of your pocket. Add all your expenses below.
 
-    %table.list.table.table-striped
-        %tr
-            %th Person
-            %th Expense
-            %th Frequency
-            %th Activity
-            %th{:style => "text-align:center;"} Disable
-            %th{:style => "text-align:center;"} Remove
 
-    %div
-        %input.person.input-medium{:placeholder => "Person", :type => "text"}
-        spends
-        $
-        %input.expense.input-medium{:placeholder => "Expense", :type => "text"}
-        per
-        %select.frequency.input-medium{:placeholder => "Frequency"}
-            %option Hour
-            %option Day
-            %option Week
-            %option Month
-            %option Year
-        on
-        %input.outlet.input-medium{:placeholder => "Activity", :type => "text"}
-        .
+    %ul.nav.nav-tabs
+        %li.list.active
+            %a{data-toggle: 'tab', data-target: 'div.tab-pane.list'} List
+        %li.summary
+            %a{data-toggle: 'tab', data-target: 'div.tab-pane.summary'} Summary
 
-    %div
-        %button.add.btn.btn-danger{:type => "button"} Add Liability
+    %div.tab-content
+        %div.tab-pane.list.active
+            %table.list.table.table-striped
+                %tr
+                    %th Person
+                    %th Expense
+                    %th Frequency
+                    %th Activity
+                    %th{:style => "text-align:center;"} Disable
+                    %th{:style => "text-align:center;"} Remove
 
-    %h3 Summary
+            %div
+                %input.person.input-medium{:placeholder => "Person", :type => "text"}
+                spends
+                $
+                %input.expense.input-medium{:placeholder => "Expense", :type => "text"}
+                per
+                %select.frequency.input-medium{:placeholder => "Frequency"}
+                    %option Hour
+                    %option Day
+                    %option Week
+                    %option Month
+                    %option Year
+                on
+                %input.outlet.input-medium{:placeholder => "Activity", :type => "text"}
+                .
 
-    %table.summary.table.table-striped
-        %tr
-            %th Expense
-            %th per
-            %th Hours of Work
-        %tr
-            %td.expense.hour
-            %th Hour
-            %td.hours.hour
-        %tr
-            %td.expense.day
-            %th Day
-            %td.hours.day
-        %tr
-            %td.expense.week
-            %th Week
-            %td.hours.week
-        %tr
-            %td.expense.month
-            %th Month
-            %td.hours.month
-        %tr
-            %td.expense.year
-            %th Year
-            %td.hours.year
+            %div
+                %button.add.btn.btn-danger{:type => "button"} Add Liability
+
+        %div.tab-pane.summary
+            %table.summary.table.table-striped
+                %tr
+                    %th Expense
+                    %th per
+                    %th Hours of Work
+                %tr
+                    %td.expense.hour
+                    %th Hour
+                    %td.hours.hour
+                %tr
+                    %td.expense.day
+                    %th Day
+                    %td.hours.day
+                %tr
+                    %td.expense.week
+                    %th Week
+                    %td.hours.week
+                %tr
+                    %td.expense.month
+                    %th Month
+                    %td.hours.month
+                %tr
+                    %td.expense.year
+                    %th Year
+                    %td.hours.year

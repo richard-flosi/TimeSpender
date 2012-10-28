@@ -4,36 +4,43 @@
     %p
         How much do you put away into savings regularly?
 
-    %table.list.table.table-striped
-        %tr
-            %th Person
-            %th Savings
-            %th Frequency
-            %th{:style => "text-align:center;"} Disable
-            %th{:style => "text-align:center;"} Remove
+    %ul.nav.nav-tabs
+        %li.list.active
+            %a{data-toggle: 'tab', data-target: 'div.tab-pane.list'} List
+        %li.summary
+            %a{data-toggle: 'tab', data-target: 'div.tab-pane.summary'} Summary
 
-    %div
-        %input.person.input-medium{:placeholder => "Person", :type => "text"}
-        saves
-        $
-        %input.savings.input-medium{:placeholder => "Savings", :type => "text"}
-        per
-        %select.frequency.input-medium{:placeholder => "Frequency"}
-            %option Day
-            %option Week
-            %option Month
-            %option Year
-        .
+    %div.tab-content
+        %div.tab-pane.list.active
+            %table.list.table.table-striped
+                %tr
+                    %th Person
+                    %th Savings
+                    %th Frequency
+                    %th{:style => "text-align:center;"} Disable
+                    %th{:style => "text-align:center;"} Remove
 
-    %div
-        %button.add.btn.btn-success{:type => "button"} Add Savings
+            %div
+                %input.person.input-medium{:placeholder => "Person", :type => "text"}
+                saves
+                $
+                %input.savings.input-medium{:placeholder => "Savings", :type => "text"}
+                per
+                %select.frequency.input-medium{:placeholder => "Frequency"}
+                    %option Day
+                    %option Week
+                    %option Month
+                    %option Year
+                .
 
-    %h3 Summary
+            %div
+                %button.add.btn.btn-success{:type => "button"} Add Savings
 
-    %table.summary.table.table-striped
-        %tr
-            %th Hour
-            %th Day
-            %th Week
-            %th Month
-            %th Year
+        %div.tab-pane.summary
+            %table.summary.table.table-striped
+                %tr
+                    %th Hour
+                    %th Day
+                    %th Week
+                    %th Month
+                    %th Year
