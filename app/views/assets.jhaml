@@ -6,9 +6,9 @@
 
     %ul.nav.nav-tabs
         %li.list.active
-            %a{data-toggle: 'tab', data-target: 'div.tab-pane.list'} List
+            %a{data-toggle: 'tab', data-target: '#assets div.tab-pane.list'} List
         %li.summary
-            %a{data-toggle: 'tab', data-target: 'div.tab-pane.summary'} Summary
+            %a{data-toggle: 'tab', data-target: '#assets div.tab-pane.summary'} Summary
 
     %div.tab-content
         %div.tab-pane.list.active
