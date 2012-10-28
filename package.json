@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "TimeSpender",
   "version": "0.0.1",
   "dependencies": {
     "serveup": "~0.0.5",
@@ -7,6 +7,11 @@
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",
     "jqueryify": "~0.0.1",
-    "spine": "~1.0.7"
+    "bootstrapify": "git://github.com/richard-flosi/bootstrapify.git",
+    "html5ify": "git://github.com/richard-flosi/html5ify.git",
+    "spine": "~1.0.7",
+    "coffee-script": "*",
+    "haml-coffee": "*",
+    "less": "*"
   }
 }

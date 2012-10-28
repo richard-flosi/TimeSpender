@@ -1,0 +1,7 @@
+#contact
+    %h2 Contact
+
+    %p
+        GitHub:
+        %a{:href => "https://github.com/richard-flosi/TimeSpender"}
+            https://github.com/richard-flosi/TimeSpender

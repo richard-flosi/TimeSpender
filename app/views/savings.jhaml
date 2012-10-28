@@ -1,0 +1,39 @@
+#savings
+    %h2 Savings
+
+    %p
+        How much do you put away into savings regularly?
+
+    %table.list.table.table-striped
+        %tr
+            %th Person
+            %th Savings
+            %th Frequency
+            %th{:style => "text-align:center;"} Disable
+            %th{:style => "text-align:center;"} Remove
+
+    %div
+        %input.person.input-medium{:placeholder => "Person", :type => "text"}
+        saves
+        $
+        %input.savings.input-medium{:placeholder => "Savings", :type => "text"}
+        per
+        %select.frequency.input-medium{:placeholder => "Frequency"}
+            %option Day
+            %option Week
+            %option Month
+            %option Year
+        .
+
+    %div
+        %button.add.btn.btn-success{:type => "button"} Add Savings
+
+    %h3 Summary
+
+    %table.summary.table.table-striped
+        %tr
+            %th Hour
+            %th Day
+            %th Week
+            %th Month
+            %th Year

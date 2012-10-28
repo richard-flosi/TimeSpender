@@ -1,0 +1,15 @@
+#balance
+    %h2 Balance
+
+    %p
+        Your balance is the difference between your Assets and your Liabilities.
+
+    %h3 Summary
+
+    %table.summary.table.table-striped
+        %tr
+            %th Hour
+            %th Day
+            %th Week
+            %th Month
+            %th Year

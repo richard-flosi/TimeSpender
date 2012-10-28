@@ -1,0 +1,64 @@
+#assets
+    %h2 Assets
+
+    %p
+        Assets put money in your pocket. Add all your sources of income below.
+
+    %table.list.table.table-striped
+        %tr
+            %th Person
+            %th Income
+            %th Frequency
+            %th Source
+            %th Hours
+            %th{:style => "text-align:center;"} Disable
+            %th{:style => "text-align:center;"} Remove
+
+    %div
+        %input.person.input-medium{:placeholder => "Person", :type => "text"}
+        makes
+        $
+        %input.income.input-medium{:placeholder => "Income", :type => "text"}
+        per
+        %select.frequency.input-medium{:placeholder => "Frequency"}
+            %option Hour
+            %option Day
+            %option Week
+            %option Month
+            %option Year
+        from
+        %input.source.input-medium{:placeholder => "Source", :type => "text"}
+        for
+        %input.hours.input-medium{:placeholder => "Hours", :type => "text"}
+        hours.
+
+    %div
+        %button.add.btn.btn-primary{:type => "button"} Add Asset
+
+    %h3 Summary
+
+    %table.summary.table.table-striped
+        %tr
+            %th Income
+            %th per
+            %th Hours of Work
+        %tr
+            %td.income.hour
+            %th Hour
+            %td.hours.hour
+        %tr
+            %td.income.day
+            %th Day
+            %td.hours.day
+        %tr
+            %td.income.week
+            %th Week
+            %td.hours.week
+        %tr
+            %td.income.month
+            %th Month
+            %td.hours.month
+        %tr
+            %td.income.year
+            %th Year
+            %td.hours.year

@@ -1,7 +1,0 @@
-<td><%= @person %></td>
-<td>makes $<%= @income %></td>
-<td>per <%= @frequency %></td>
-<td>from <%= @source %></td>
-<td>for <%= @hours %> hours.</td>
-<td style="text-align:center;"><input type="checkbox"></td>
-<td style="text-align:center;"><i class="remove icon-trash"></i></td>

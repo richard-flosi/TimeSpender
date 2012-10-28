@@ -1,0 +1,11 @@
+%td= @person
+%td
+    spends $#{@expense}
+%td
+    per #{@frequency}
+%td
+    on #{@activity}
+%td{:style => "text-align:center;"}
+    %input{:type => "checkbox"}/
+%td{:style => "text-align:center;"}
+    %i.remove.icon-trash

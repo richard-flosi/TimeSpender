@@ -1,0 +1,61 @@
+#liabilities
+    %h2 Liabilities
+
+    %p
+        Liabilities take money out of your pocket. Add all your expenses below.
+
+    %table.list.table.table-striped
+        %tr
+            %th Person
+            %th Expense
+            %th Frequency
+            %th Activity
+            %th{:style => "text-align:center;"} Disable
+            %th{:style => "text-align:center;"} Remove
+
+    %div
+        %input.person.input-medium{:placeholder => "Person", :type => "text"}
+        spends
+        $
+        %input.expense.input-medium{:placeholder => "Expense", :type => "text"}
+        per
+        %select.frequency.input-medium{:placeholder => "Frequency"}
+            %option Hour
+            %option Day
+            %option Week
+            %option Month
+            %option Year
+        on
+        %input.outlet.input-medium{:placeholder => "Activity", :type => "text"}
+        .
+
+    %div
+        %button.add.btn.btn-danger{:type => "button"} Add Liability
+
+    %h3 Summary
+
+    %table.summary.table.table-striped
+        %tr
+            %th Expense
+            %th per
+            %th Hours of Work
+        %tr
+            %td.expense.hour
+            %th Hour
+            %td.hours.hour
+        %tr
+            %td.expense.day
+            %th Day
+            %td.hours.day
+        %tr
+            %td.expense.week
+            %th Week
+            %td.hours.week
+        %tr
+            %td.expense.month
+            %th Month
+            %td.hours.month
+        %tr
+            %td.expense.year
+            %th Year
+            %td.hours.year

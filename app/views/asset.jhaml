@@ -1,0 +1,13 @@
+%td= @person
+%td
+    makes $#{@income}
+%td
+    per #{@frequency}
+%td
+    from #{@source}
+%td
+    for #{@hours} hours.
+%td{:style => "text-align:center;"}
+    %input{:type => "checkbox"}/
+%td{:style => "text-align:center;"}
+    %i.remove.icon-trash

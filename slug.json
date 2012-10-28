@@ -1,8 +1,10 @@
 {
   "dependencies": [
-    "es5-shimify", 
-    "json2ify", 
-    "jqueryify", 
+    "es5-shimify",
+    "json2ify",
+    "jqueryify",
+    "bootstrapify",
+    "html5ify",
     "spine",
     "spine/lib/local",
     "spine/lib/ajax",
