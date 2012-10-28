@@ -4,24 +4,22 @@
         <meta charset="utf-8">
         <title>TimeSpender</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
-        <style>
-            body { padding-top: 60px; /* 60px to make the container go all the way
-            to the bottom of the topbar */ }
-        </style>
+        <meta name="description" content="TimeSpender">
+        <meta name="author" content="TimeSpender">
         <link rel="stylesheet" href="application.css" type="text/css" charset="utf-8">
         <script src="application.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             var jQuery  = require("jqueryify");
+            var bootstrap  = require("bootstrapify");
+            if (jQuery.browser.msie && parseInt(jQuery.browser.version) < 9) {
+               var html5ify  = require("html5ify");
+            }
             var exports = this;
             jQuery(function(){
                 var App = require("index");
                 exports.app = new App({el: $("body")});
             });
         </script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div class="navbar navbar-fixed-top navbar-inverse">
